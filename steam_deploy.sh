@@ -86,8 +86,16 @@ cat << EOF > "manifest.vdf"
     "publishedfileid" "$itemId"
     "contentfolder" "$stagingPath"
     "changenote" "$changeNote"
-}
 EOF
+
+if [ -n "$previewFile" ]; then
+    if [[ ! "$previewFile" = /* ]]; then
+        previewFile="$contentroot/$previewFile"
+    fi
+    echo '    "previewfile" "'"$previewFile"'"' >> manifest.vdf
+fi
+
+echo "}" >> manifest.vdf
 
 cat manifest.vdf
 echo ""
