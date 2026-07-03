@@ -60,7 +60,7 @@ inputs:
     default: ""
     description: 'Path to the new preview image file (relative to the repository root, e.g., "preview.jpg"). The file must exist and meet Steam Workshop requirements (≤1 MB, JPG/PNG/GIF).'
   isBeta:
-    required: true
+    required: false
     default: "false"
     description: "Is beta version"
 
