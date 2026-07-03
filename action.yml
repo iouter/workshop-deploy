@@ -85,3 +85,4 @@ runs:
     concurrentStaging: ${{ inputs.concurrentStaging }}
     verbosity: ${{ inputs.verbosity }}
     previewFile: ${{ inputs.previewFile }}
+    isBeta: ${{ inputs.isBeta }}
