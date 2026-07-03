@@ -95,6 +95,13 @@ if [ -n "$previewFile" ]; then
     echo '    "previewfile" "'"$previewFile"'"' >> manifest.vdf
 fi
 
+if [ "$isBeta" = "false" ]; then
+    echo '    "maxBranch" "public"' >> manifest.vdf
+else
+    # 如果 isBeta 为 "true" 或其他非 false 值，均添加 minBranch
+    echo '    "minBranch" "public-beta"' >> manifest.vdf
+fi
+
 echo "}" >> manifest.vdf
 
 cat manifest.vdf
